@@ -1,0 +1,4 @@
+services:
+  severa_directory.api_connector:
+    class: Drupal\severa_directory\MovieAPIConnector
+    arguments: ["@http_client_factory"]

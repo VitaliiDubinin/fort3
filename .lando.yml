@@ -1,0 +1,4 @@
+name: fort3
+recipe: drupal9
+config:
+  webroot: .

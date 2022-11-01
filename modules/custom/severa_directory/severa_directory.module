@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function severa_directory_theme($existing, $type, $theme, $path) {
+  return [
+    'severa-respond' => [
+      'variables' => ['content' => NULL]
+    ],
+    'movie-card'=>['variables'=>['content' => NULL]]
+  ];
+}

@@ -1,0 +1,6 @@
+name: Severa Directory
+description: Allow users to search get to Severa API
+package: CustomModules
+
+type: module
+core_version_requirement: ^9.0

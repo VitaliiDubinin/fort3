@@ -23,7 +23,8 @@
         "drupal/devel": "^5.0",
         "drupal/webprofiler": "^9.0",
         "drush/drush": "^11.3",
-        "guzzlehttp/guzzle": "^6.5"
+        "guzzlehttp/guzzle": "^6.5",
+        "kint-php/kint": "^4.2"
     },
     "conflict": {
         "drupal/drupal": "*"

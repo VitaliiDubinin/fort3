@@ -29,9 +29,6 @@ class SeveraRespond extends ControllerBase {
       }
 
       public function createMovieCard(){
-        /** @var \Drupal\severa_directory\MovieAPIConnector $severa_api_connector_service */
-        $severa_api_connector_service = \Drupal::service('severa_directory.api_connector');
-
         $movieCards=[];
         $movies = $this->listMovies();
         if(!empty($movies)){
@@ -39,7 +36,7 @@ class SeveraRespond extends ControllerBase {
             $content =[
               'title'=>$movie->title,
               'description'=>$movie->overview,
-              'movie_id'=>$movie->id,
+              'movie_id'=>$movie->id
             ];
             $movieCards[]=[
               '#theme'=>'movie-card',

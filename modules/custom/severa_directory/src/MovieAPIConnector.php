@@ -5,6 +5,7 @@ use Drupal\Core\Http\ClientFactory;
 use Drupal\Core\Utility\Error;
 use GuzzleHttp\Exception\RequestException;
 
+
 class MovieAPIConnector{
 private $client;
 private $query;
@@ -27,10 +28,11 @@ public function __construct(ClientFactory $client){
 
 public function discoverMovies(){
     $data =[];
-    $endpoint ='/3/discover/movie/?api_key=';
+    $endpoint ='/3/discover/movie';
     $options=['query'=> $this->query];
     try {
         $request = $this->client->get($endpoint, $options);
+      
         $result = $request->getBody()->getContents();
         $data =json_decode($result);
     }

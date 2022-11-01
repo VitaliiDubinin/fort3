@@ -29,3 +29,9 @@ https://www.themoviedb.org/documentation/api/discover
 https://www.drupal.org/node/2932520
 https://curl.se/libcurl/c/libcurl-errors.html
 https://drupal.stackexchange.com/questions/18862/is-there-a-function-to-clear-the-watchdog-log-inside-a-module
+
+https://docs.lando.dev/guides/lando-phpstorm.html
+https://www.fourkitchens.com/blog/development/xdebug-lando-phpstorm-mac/
+https://www.austinprogressivecalendar.com/blog/debugging-drupal8-phpstorm-and-lando-your-mac
+https://www.jetbrains.com/help/phpstorm/2022.2/servers.html
+https://www.drupal.org/docs/develop/development-tools/editors-and-ides/configuring-phpstorm

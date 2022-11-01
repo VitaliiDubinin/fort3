@@ -3,6 +3,7 @@ namespace Drupal\severa_directory;
 
 use Drupal\Core\Http\ClientFactory;
 use Drupal\Core\Utility\Error;
+use GuzzleHttp\Exception\RequestException;
 
 class MovieAPIConnector{
 private $client;
@@ -33,9 +34,11 @@ public function discoverMovies(){
         $result = $request->getBody()->getContents();
         $data =json_decode($result);
     }
-    catch(\GuzzleHttp\Exception\RequestException $e){
+    catch(RequestException $e){
         $variables = Error::decodeException($e);
         \Drupal::logger('severa-directory')->error('%type: @message in %function (line %line of %file).', $variables);
+   
+        
     }
     return $data;
 }

@@ -23,3 +23,9 @@ php -r 'echo curl_version()["version"];'
 7. mkdir fort3 && cd fort3 && lando init --source remote --remote-url https://www.drupal.org/download-latest/tar.gz --remote-options="--strip-components 1" --recipe drupal9 --webroot . --name fort3
 
 ---
+
+https://www.themoviedb.org/documentation/api/discover
+
+https://www.drupal.org/node/2932520
+https://curl.se/libcurl/c/libcurl-errors.html
+https://drupal.stackexchange.com/questions/18862/is-there-a-function-to-clear-the-watchdog-log-inside-a-module

@@ -2,3 +2,4 @@ name: fort3
 recipe: drupal9
 config:
   webroot: .
+  xdebug: true

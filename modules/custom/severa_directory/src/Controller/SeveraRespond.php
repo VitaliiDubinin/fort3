@@ -24,8 +24,11 @@ class SeveraRespond extends ControllerBase {
         $movie_list = $severa_api_connector_service->discoverMovies();
         if(!empty($movie_list -> results)){
           return $movie_list->results;
-        }
-        return[];
+        } else {
+        return  [
+          ['#title' => $this->t('API Key (v3 auth)')],
+          ['#title' =>'movie list is empty'],
+          '#id' => 11];}
       }
 
       public function createMovieCard(){

@@ -1,6 +1,7 @@
-<h1>respond from movies card twig</h1>
-{{kint(content)}}
+{# <h1>respond from movies card twig</h1> #}
+{# {{kint(content)}} #}
 <div> 
+{{content.movie_id}}
 {{content.title}}
 {{content.description|slice(0,150) ~ '...'}}
 </div>

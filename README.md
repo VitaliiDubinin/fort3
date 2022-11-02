@@ -1,37 +1,75 @@
-https://www.youtube.com/watch?v=sHNJxx0L9r0
+<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
 
-https://www.youtube.com/watch?v=DDH6IsSEpQM&t=227s
+Drupal is an open source content management platform supporting a variety of
+websites ranging from personal weblogs to large community-driven websites. For
+more information, visit the Drupal website, [Drupal.org][Drupal.org], and join
+the [Drupal community][Drupal community].
 
-9. chmod 755 default for fort3/sites/default
+## Contributing
 
-10. composer require 'drupal/webprofiler:^9.0'
+Drupal is developed on [Drupal.org][Drupal.org], the home of the international
+Drupal community since 2001!
 
-11. lando drush ws
+[Drupal.org][Drupal.org] hosts Drupal's [GitLab repository][GitLab repository],
+its [issue queue][issue queue], and its [documentation][documentation]. Before
+you start working on code, be sure to search the [issue queue][issue queue] and
+create an issue if your aren't able to find an existing issue.
 
-12. composer require 'drupal/devel:^5.0'
+Every issue on Drupal.org automatically creates a new community-accessible fork
+that you can contribute to. Learn more about the code contribution process on
+the [Issue forks & merge requests page][issue forks].
 
-13. composer require guzzlehttp/guzzle:^6.5
+## Usage
 
-php -r 'echo curl_version()["version"];'
+For a brief introduction, see [USAGE.txt](/core/USAGE.txt). You can also find
+guides, API references, and more by visiting Drupal's [documentation
+page][documentation].
 
-4. lando drush site:install --db-url=mysql://drupal9:drupal9@database/drupal9 -y
+You can quickly extend Drupal's core feature set by installing any of its
+[thousands of free and open source modules][modules]. With Drupal and its
+module ecosystem, you can often build most or all of what your project needs
+before writing a single line of code.
 
-5. lando composer require drush/drush
+## Changelog
 
-6. lando start
+Drupal keeps detailed [change records][changelog]. You can search Drupal's
+changes for a record of every notable breaking change and new feature since
+2011.
 
-7. mkdir fort3 && cd fort3 && lando init --source remote --remote-url https://www.drupal.org/download-latest/tar.gz --remote-options="--strip-components 1" --recipe drupal9 --webroot . --name fort3
+## Security
 
----
+For a list of security announcements, see the [Security advisories
+page][Security advisories] (available as [an RSS feed][security RSS]). This
+page also describes how to subscribe to these announcements via email.
 
-https://www.themoviedb.org/documentation/api/discover
+For information about the Drupal security process, or to find out how to report
+a potential security issue to the Drupal security team, see the [Security team
+page][security team].
 
-https://www.drupal.org/node/2932520
-https://curl.se/libcurl/c/libcurl-errors.html
-https://drupal.stackexchange.com/questions/18862/is-there-a-function-to-clear-the-watchdog-log-inside-a-module
+## Need a helping hand?
 
-https://docs.lando.dev/guides/lando-phpstorm.html
-https://www.fourkitchens.com/blog/development/xdebug-lando-phpstorm-mac/
-https://www.austinprogressivecalendar.com/blog/debugging-drupal8-phpstorm-and-lando-your-mac
-https://www.jetbrains.com/help/phpstorm/2022.2/servers.html
-https://www.drupal.org/docs/develop/development-tools/editors-and-ides/configuring-phpstorm
+Visit the [Support page][support] or browse [over a thousand Drupal
+providers][service providers] offering design, strategy, development, and
+hosting services.
+
+## Legal matters
+
+Know your rights when using Drupal by reading Drupal core's
+[license](/core/LICENSE.txt).
+
+Learn about the [Drupal trademark and logo policy here][trademark].
+
+[Drupal.org]: https://www.drupal.org
+[Drupal community]: https://www.drupal.org/community
+[GitLab repository]: https://git.drupalcode.org/project/drupal
+[issue queue]: https://www.drupal.org/project/issues/drupal
+[issue forks]: https://www.drupal.org/drupalorg/docs/gitlab-integration/issue-forks-merge-requests
+[documentation]: https://www.drupal.org/documentation
+[changelog]: https://www.drupal.org/list-changes/drupal
+[modules]: https://www.drupal.org/project/project_module
+[security advisories]: https://www.drupal.org/security
+[security RSS]: https://www.drupal.org/security/rss.xml
+[security team]: https://www.drupal.org/drupal-security-team
+[service providers]: https://www.drupal.org/drupal-services
+[support]: https://www.drupal.org/support
+[trademark]: https://www.drupal.com/trademark

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38045963a7d846e778a1f1b27d2d190a",
+    "content-hash": "ca2b80dcb69229c98b85de6b00e0ddec",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2240,6 +2240,50 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
+            }
+        },
+        {
+            "name": "drupal/nasa_pod",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nasa_pod.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nasa_pod-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "a5ee702bc809a97717a98277c051e2b7ee6cfade"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1667323201",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "skalwar",
+                    "homepage": "https://www.drupal.org/user/3692274"
+                }
+            ],
+            "description": "Creates a block for NASA's astronomy picture of the day.",
+            "homepage": "https://www.drupal.org/project/nasa_pod",
+            "support": {
+                "source": "https://git.drupalcode.org/project/nasa_pod"
             }
         },
         {

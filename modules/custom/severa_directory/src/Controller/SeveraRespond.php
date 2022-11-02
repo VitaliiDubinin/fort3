@@ -21,16 +21,17 @@ class SeveraRespond extends ControllerBase {
       public function listMovies(){
         /** @var \Drupal\severa_directory\MovieAPIConnector $severa_api_connector_service */
         $severa_api_connector_service = \Drupal::service('severa_directory.api_connector');
+        $data=[['#title' =>'movie list is empty'],
+        ['#overview'=>'movie list is empty'],
+        ['#id'=>'11']
+      ];
         $movie_list = $severa_api_connector_service->discoverMovies();
         if(!empty($movie_list -> results)){
           return $movie_list->results;
         } else {
-        return  [
-          ['#title' => $this->t('API Key (v3 auth)')],
-          ['#title' =>'movie list is empty'],
-          '#id' => 11];}
+        return  $data;
       }
-
+    }
       public function createMovieCard(){
         $movieCards=[];
         $movies = $this->listMovies();

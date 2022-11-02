@@ -1,0 +1,6 @@
+name: Basic Page
+description: Get data from controller to twig
+package: CustomModules
+
+type: module
+core_version_requirement: ^9.0

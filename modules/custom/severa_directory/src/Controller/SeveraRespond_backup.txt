@@ -7,11 +7,11 @@ use Drupal\Core\Controller\ControllerBase;
 class SeveraRespond extends ControllerBase {
     public function view() 
     {
-        $this->dataList();
+        $this->listMovies();
         $content = [];
     
         $content['name'] = 'My name is Severa';
-        $content['cards']=$this->requestCards();
+        $content['movies']=$this->createMovieCard();
     
         return [
           '#theme' => 'severa-respond',
@@ -19,14 +19,14 @@ class SeveraRespond extends ControllerBase {
         ];
     }
 
-      public function dataList()
+      public function listMovies()
       {
-        /** @var \Drupal\severa_directory\SeveraAPIConnector $severa_api_connector_service */
+        /** @var \Drupal\severa_directory\MovieAPIConnector $severa_api_connector_service */
         $severa_api_connector_service = \Drupal::service('severa_directory.api_connector');
 
-        $customer_list = $severa_api_connector_service->findCustomer();
-        if(!empty($customer_list -> results)){
-          return $customer_list->results;
+        $movie_list = $severa_api_connector_service->discoverMovies();
+        if(!empty($movie_list -> results)){
+          return $movie_list->results;
         } else {
         return  [];
         }
@@ -34,27 +34,27 @@ class SeveraRespond extends ControllerBase {
 
 
 
-      public function requestCards()
+      public function createMovieCard()
       {
-        $requestCard=[];
-        $cards = $this->dataList();
+        $movieCards=[];
+        $movies = $this->listMovies();
         // dump($movies);
-        if(!empty($cards))
+        if(!empty($movies))
         {
-          foreach ($cards as $card)
+          foreach ($movies as $movie)
           {
             $content =[
-              'title'=>$card->title,
-              'description'=>$card->overview,
-              'movie_id'=>$card->id
+              'title'=>$movie->title,
+              'description'=>$movie->overview,
+              'movie_id'=>$movie->id
             ];
-            $requestCard[]=[
+            $movieCards[]=[
               '#theme'=>'movie-card',
               '#content'=>$content,
             ];          
           }
         }
-        return $requestCard;
+        return $movieCards;
       }
 
       // public function createMovieCard(){

@@ -3,3 +3,6 @@ recipe: drupal9
 config:
   webroot: .
   xdebug: true
+services:
+  myservice1:
+    type: phpmyadmin

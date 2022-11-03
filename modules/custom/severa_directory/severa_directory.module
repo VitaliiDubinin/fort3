@@ -10,7 +10,7 @@ function severa_directory_theme($existing,$type,$theme,$path) {
         'content' => NULL
         ]
       ],
-    'movie-card'=>[
+    'severa-card'=>[
       'variables'=>[
         'content' => NULL
         ]

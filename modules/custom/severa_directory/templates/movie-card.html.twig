@@ -1,7 +1,11 @@
-{# <h1>respond from movies card twig</h1> #}
-{# {{kint(content)}} #}
-<div> 
-{{content.movie_id}}
+{# <h1>respond from movies card twig</h1>
+{{kint(content)}} #}
+<div> Name of Project:{{content.title}}
+{# {{content.movie_id}}
 {{content.title}}
-{{content.description|slice(0,150) ~ '...'}}
+{{content.description|slice(0,150) ~ '...'}} #}
+{# {{content.movie_id}} #}
+{# <div>Owner:{{content.title}}</div> #}
+<div>Owner:{{content.movie_id.name}}</div>
+<div>Id:{{content.description|slice(0,150) ~ '...'}}</div>
 </div>

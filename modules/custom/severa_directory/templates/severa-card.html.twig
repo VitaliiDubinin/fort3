@@ -1,0 +1,21 @@
+{# <h1>respond from movies card twig</h1>
+{{kint(content)}} #}
+<style>
+.myDiv {
+  border: 3px outset red;
+  background-color: black;
+  text-align: center;
+  color:white;
+}
+.bold{font-weight:bold}
+</style>
+<div> 
+<h3 class="myDiv"><span class="bold">Name of Project:  </span>{{content.title}}</h3>
+{# {{content.movie_id}}
+{{content.title}}
+{{content.description|slice(0,150) ~ '...'}} #}
+{# {{content.movie_id}} #}
+{# <div>Owner:{{content.title}}</div> #}
+<div>Owner:{{content.movie_id.name}}</div>
+<div>Id:{{content.description}}</div>
+</div>

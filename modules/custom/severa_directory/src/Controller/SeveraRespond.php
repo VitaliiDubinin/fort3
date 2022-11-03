@@ -25,10 +25,12 @@ class SeveraRespond extends ControllerBase {
         $severa_api_connector_service = \Drupal::service('severa_directory.api_connector');
 
         $customer_list = $severa_api_connector_service->findCustomer();
-        if(!empty($customer_list -> results)){
-          return $customer_list->results;
+        // if(!empty($customer_list -> results)){
+        //   return $customer_list->results;
+        if(!empty($customer_list)){
+          return $customer_list;
         } else {
-        return  [];
+        return  [1,2,3];
         }
       }
 
@@ -44,12 +46,15 @@ class SeveraRespond extends ControllerBase {
           foreach ($cards as $card)
           {
             $content =[
-              'title'=>$card->title,
-              'description'=>$card->overview,
-              'movie_id'=>$card->id
+              // 'title'=>$card->title,
+              // 'description'=>$card->overview,
+              // 'movie_id'=>$card->id
+              'title'=>$card->name,
+              'description'=>$card->number,
+              'movie_id'=>$card->owner,
             ];
             $requestCard[]=[
-              '#theme'=>'movie-card',
+              '#theme'=>'severa-card',
               '#content'=>$content,
             ];          
           }
@@ -57,41 +62,5 @@ class SeveraRespond extends ControllerBase {
         return $requestCard;
       }
 
-      // public function createMovieCard(){
-      //   $movieCards=[];
-      //   $movies = [['title'=>'movie list is empty','overview'=>'movie list is empty','id'=>'11',],['title'=>'movie list is empty','overview'=>'movie list is empty','id'=>'12',]]; 
-      //   if(!empty($movies)){
-      //     foreach ($movies as $movie){
-      //       $content =[
-      //         'title'=>$movie['title'],
-      //         'description'=>$movie['overview'],
-      //         'movie_id'=>$movie['id'],
-      //       ];
-      //       $movieCards[]=[
-      //         '#theme'=>'movie-card',
-      //         '#content'=>$content,
-      //       ];          
-      //     }
-      //   }
-      //   return $movieCards;
-      // }
 
-      // public function createMovieCard(){
-      //   $movieCards=[];
-      //   $movies = [['title'=>'movie list is empty','overview'=>'movie list is empty','id'=>'11',],['title'=>'movie list is empty','overview'=>'movie list is empty','id'=>'12',]]; 
-      //   if(!empty($movies)){
-      //     foreach ($movies as $movie){
-      //       $content =[
-      //         'title'=>$movie['title'],
-      //         'description'=>$movie['overview'],
-      //         'movie_id'=>$movie['id'],
-      //       ];
-      //       $movieCards[]=[
-      //         '#theme'=>'movie-card',
-      //         '#content'=>$content,
-      //       ];          
-      //     }
-      //   }
-      //   return $movieCards;
-      // }
 }

@@ -48,9 +48,9 @@ public function getRequestToken(){
 
     $headers = [
       'Content-Type' => 'application/json',
-              'client_Id' =>'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
-        'client_Secret' => 'bc0f05f6-1596-4371-314f-c470d7b7fa1c',
-        'scope' => 'customers:read',
+        //       'client_Id' =>'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
+        // 'client_Secret' => 'bc0f05f6-1596-4371-314f-c470d7b7fa1c',
+        // 'scope' => 'customers:read',
     ];
     $body = [
         'client_Id' =>'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
@@ -91,7 +91,7 @@ public function getRequestToken(){
       return $access_token;
     } elseif ( $result->getStatusCode() === 400) { $data = json_decode($result->getBody());}
      else {
-      return [];
+      return [$message];
     }
     // return $data;
     // return $request;

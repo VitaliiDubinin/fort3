@@ -1,6 +1,9 @@
 <div>
-{# <h1>from severa respond twig</h1>
-{{kint(content)}} #}
+{# <h1>from severa respond twig</h1> #}
+{# {{kint(content)}} #}
+{# {{kint(message)}}
+{{kint(access_token)}}
+{{kint(resofrequesttoken)}} #}
 {% if content.cards is not empty %}
     {% for card in content.cards %}
         {{ card }}

@@ -4,7 +4,13 @@ namespace Drupal\severa_directory\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
+
 class SeveraRespond extends ControllerBase {
+   
+
+
+
+
     public function view() 
     {
         $this->dataList();
@@ -33,7 +39,6 @@ class SeveraRespond extends ControllerBase {
         return  [1,2,3];
         }
       }
-
 
 
       public function requestCards()

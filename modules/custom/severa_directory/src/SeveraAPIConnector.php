@@ -5,7 +5,9 @@ use Drupal\Core\Http\ClientFactory;
 use Drupal\Core\Utility\Error;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
+// use GuzzleHttp\Psr7;
 use GuzzleHttp\Client;
+use \Drupal\Component\Utility\UrlHelper;
 
 use Drupal\Component\Serialization\Json;
 
@@ -37,17 +39,86 @@ private $query;
 
 // }
 
+public function getRequestToken(){
+    $client = new Client();
+
+    $message="Expired authorization code";
+    // $config = $this->config;
+    $url = 'https://api.severa.visma.com/rest-api/v1.0/token';
+
+    $headers = [
+      'Content-Type' => 'application/json',
+              'client_Id' =>'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
+        'client_Secret' => 'bc0f05f6-1596-4371-314f-c470d7b7fa1c',
+        'scope' => 'customers:read',
+    ];
+    $body = [
+        'client_Id' =>'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
+        'client_Secret' => 'bc0f05f6-1596-4371-314f-c470d7b7fa1c',
+        'scope' => 'customers:read',
+    ];
+
+    // $body = urldecode(UrlHelper::buildQuery([
+    // //   'client_Id' => $config->get('DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com'),
+    // //   'client_Secret' => $config->get('client_secret'),
+    // //   'scope' => $config->get('customers:read'),
+    //   'client_Id' =>'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
+    //   'client_Secret' => 'bc0f05f6-1596-4371-314f-c470d7b7fa1c',
+    //   'scope' => 'customers:read',
+    // ]));
+
+
+    $result = \Drupal::httpClient()->post($url, [
+      'headers' => $headers,
+      'body' => json_encode($body),
+    ]);
+
+
+    // $request = new Request('POST', 'https://api.severa.visma.com/rest-api/v1.0/token', $headers, json_encode($body));
+    // $res = $client->sendAsync($request)->wait();  
+
+
+
+
+    // $result = [
+    //   'headers' => $headers,
+    //   'body' => $data,
+    // ];
+
+    if ($result->getStatusCode() == 200) {
+      $data = json_decode($result->getBody());
+      $access_token = $data->access_token;
+      return $access_token;
+    } elseif ( $result->getStatusCode() === 400) { $data = json_decode($result->getBody());}
+     else {
+      return [];
+    }
+    // return $data;
+    // return $request;
+    // return $result;
+    // return dump ($res);
+  }
+
+
+
+
+
 public function findCustomer(){
+
+    $resofrequesttoken = $this->getRequestToken();
+
     $data =[];
     // $endpoint ='/3/discover/movie';
     // $options=['query'=> $this->query];
+    $auth = 'Bearer ' . $resofrequesttoken; 
 
     try {
 
         $client = new Client();
         $headers = [
             'client_id' => 'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
-            'Authorization' => 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRzdWIiOjU0MDk1NywiY2xpZW50b3JnIjo0MTQ1NCwiY2xpZW50ZGIiOjYsImNsaWVudGlkIjoiRHJ1aWRPeV9vZm9SZXBDU01lZVVkN00yblkuYXBwcy52aXNtYXNldmVyYS5jb20iLCJzY29wZSI6IjAwMDEwMDAwMDAwMDAwMDAiLCJleHAiOjE2Njc0ODE1NjksImlzcyI6IlNldmVyYV9QdWJsaWNSZXN0X0FQSSIsImlhdCI6MTY2NzQ3Nzk2OSwibmJmIjoxNjY3NDc3OTY5fQ.4EuonxRWQrfAoodkJ9o-jCUwqkLPFyrZ2AMKczCCRncg-p3o8QyBxSUDNYumnYdcxTXfiHLBQYIgsOkWZuPT1Q'
+            'Authorization' => $auth,
+            // 'Authorization' => 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRzdWIiOjU0MDk1NywiY2xpZW50b3JnIjo0MTQ1NCwiY2xpZW50ZGIiOjYsImNsaWVudGlkIjoiRHJ1aWRPeV9vZm9SZXBDU01lZVVkN00yblkuYXBwcy52aXNtYXNldmVyYS5jb20iLCJzY29wZSI6IjAwMDEwMDAwMDAwMDAwMDAiLCJleHAiOjE2Njc1NTg4MzYsImlzcyI6IlNldmVyYV9QdWJsaWNSZXN0X0FQSSIsImlhdCI6MTY2NzU1NTIzNiwibmJmIjoxNjY3NTU1MjM2fQ.ERHf9gh9_Pbkv1ZlKdaJ6PfFMZyc9TRxVjrJle5ApMF0nxxs0fvdLHTXAKVuK8WikujBiPahpUzCDJlOQ3vaww'
           ];
 
         $request = new Request('GET', 'https://api.severa.visma.com/rest-api/v1/customers', $headers);
@@ -77,6 +148,7 @@ public function findCustomer(){
     // return dump($this->client,$res,$result,$data);
     // return dump($this->client,$endpoint,$options,$request,$result,$data);
     // return dump($client,$endpoint,$options,$request,$result,$data,$resgoogle);
+    // return dump($resofrequesttoken);
     return $data;
   }
 

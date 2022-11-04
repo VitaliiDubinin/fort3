@@ -22,6 +22,8 @@
         "drupal/core-vendor-hardening": "^9.4",
         "drupal/devel": "^5.0",
         "drupal/nasa_pod": "^1.0",
+        "drupal/oauth2_client": "^4.0@alpha",
+        "drupal/simple_oauth": "^6.0@beta",
         "drupal/webprofiler": "^9.0",
         "drush/drush": "^11.3",
         "guzzlehttp/guzzle": "^6.5",

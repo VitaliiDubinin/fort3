@@ -45,6 +45,9 @@ class SeveraRespond extends ControllerBase {
       {
         $requestCard=[];
         $cards = $this->dataList();
+        $key_id='test2key';
+        $credentials=\Drupal::service('key.repository')->getKey($key_id)->getKeyValue();
+        $multicred=json_decode($credentials);
         // dump($movies);
         if(!empty($cards))
         {
@@ -57,6 +60,8 @@ class SeveraRespond extends ControllerBase {
               'title'=>$card->name,
               'description'=>$card->number,
               'movie_id'=>$card->owner,
+              'keys'=>$credentials,
+              'multicred'=>$multicred,
             ];
             $requestCard[]=[
               '#theme'=>'severa-card',

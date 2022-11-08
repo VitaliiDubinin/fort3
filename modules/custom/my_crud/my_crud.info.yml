@@ -1,0 +1,5 @@
+name: my_crud
+type: module
+description: simple crud operation
+package: Custom
+core_version_requirement: ^8 || ^9

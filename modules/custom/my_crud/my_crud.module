@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for my_crud module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+function my_crud_menu()
+{
+  $item['my_crud']=array('title' => 'List Records', 'description'=>'', 'route'=>
+        'my_crud.mycrud_controller_listing');
+
+  $item['my_crud/form/data']=array('title' => 'Add / Edit Form', 'description'=>'', 'route'=>
+        'my_crud.mycrud_form');
+
+  $item['my_crud/form/delete/{cid}']=array('title' => 'Delete Records', 'description'=>'', 'route'=>
+        'my_crud.delete_form');
+
+  return $item;
+
+}

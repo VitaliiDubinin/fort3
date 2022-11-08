@@ -1,0 +1,23 @@
+my_crud.mycrud_controller_listing:
+  path: 'my_crud'
+  defaults:
+    _controller: 'Drupal\my_crud\Controller\MycrudController::Listing'
+    _title: 'Listing Records'
+  requirements:
+    _permission: 'access content'
+
+my_crud.mycrud_form:
+  path: 'my_crud/form/data'
+  defaults:
+    _form: 'Drupal\my_crud\Form\MycrudForm'
+    _title: 'ADD / EDIT Form'
+  requirements:
+    _permission: 'TRUE'
+
+my_crud.delete_form:
+  path: 'my_crud/form/delete/{cid}'
+  defaults:
+    _form: 'Drupal\my_crud\Form\DeleteForm'
+    _title: 'Delete Form'
+  requirements:
+    _permission: 'TRUE'

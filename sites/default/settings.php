@@ -808,3 +808,5 @@ $databases['default']['default'] = array (
 $settings['config_sync_directory'] = 'sites/default/files/config_gE0LVmOPGUcm4eqiewtireeoAQBucBWS78k4Q0ca0I9yEMSSMtFWgad-bEKwmI060hBzT1D3Mg/sync';
 
 $config['system.logging']['error_level']='verbose';
+$config['client_id']=file_get_contents('sites/default/files/samarcand.txt');
+$config['client_secret']=file_get_contents('sites/default/files/barcelona.txt');

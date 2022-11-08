@@ -21,7 +21,7 @@ private $query;
 
 public function getRequestToken(){
     $client = new Client();
-    $config = $this->config;
+    // $config = $this->config;
 
     $message="Expired authorization code";
     $url = 'https://api.severa.visma.com/rest-api/v1.0/token';
@@ -30,8 +30,10 @@ public function getRequestToken(){
       'Content-Type' => 'application/json',
     ];
     $body = [
-        'client_Id' =>$config->get('client_id'),
-        'client_Secret' => $config->get('client_secret'),
+        // 'client_Id' =>$config->get('client_id'),
+        
+        'client_Id' =>file_get_contents('sites/default/files/samarcand.txt'),
+        'client_Secret' => file_get_contents('sites/default/files/barcelona.txt'),
         'scope' => 'customers:read',
     ];
 
@@ -72,7 +74,7 @@ public function findCustomer(){
 
         $client = new Client();
         $headers = [
-            'client_id' => 'DruidOy_ofoRepCSMeeUd7M2nY.apps.vismasevera.com',
+            'client_id' => file_get_contents('sites/default/files/samarcand.txt'),
             'Authorization' => $auth,
 
           ];
